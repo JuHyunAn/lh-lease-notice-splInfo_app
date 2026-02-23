@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/c/Users/안주현/flutter/bin/flutter:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/pubspec.yaml:*)",
+      "Bash(echo:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/core/constants/app_constants.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/core/constants/app_colors.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/core/theme/app_theme.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/data/models/notice_model.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/data/repositories/notice_repository.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/core/router/app_router.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/presentation/widgets/notice_card.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/presentation/widgets/loading_widget.dart:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/presentation/screens/home/home_screen.dart:*)",
+      "Bash(python3:*)",
+      "Bash(/c/Users/안주현/Desktop/lh-lease-notice-splInfo_app/app/lib/main.dart:*)",
+      "Bash(/c/Users/안주현/AppData/Local/Android/Sdk/platform-tools/adb.exe devices)",
+      "Bash(ls:*)",
+      "Bash(/c/Users/안주현/AppData/Local/Android/Sdk/platform-tools/adb.exe reconnect offline)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "supabase"
+  ],
+  "mcpServers": {
+    "supabase": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=qxxqxgbmzsmjcxcmctgd"
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    }
+  }
+}
