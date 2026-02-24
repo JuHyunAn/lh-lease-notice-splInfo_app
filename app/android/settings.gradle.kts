@@ -2,7 +2,8 @@ pluginManagement {
     val flutterSdkPath =
         run {
             val properties = java.util.Properties()
-            file("local.properties").inputStream().use { properties.load(it) }
+            // UTF-8 명시 로딩 (한글 경로 처리)
+            file("local.properties").bufferedReader(Charsets.UTF_8).use { properties.load(it) }
             val flutterSdkPath = properties.getProperty("flutter.sdk")
             require(flutterSdkPath != null) { "flutter.sdk not set in local.properties" }
             flutterSdkPath

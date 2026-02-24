@@ -131,7 +131,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               ),
               error: (error, _) => SliverToBoxAdapter(
-                child: app_widgets.ErrorWidget(
+                child: app_widgets.AppErrorWidget(
                   message: error.toString(),
                   onRetry: () => ref.invalidate(noticeListProvider),
                 ),

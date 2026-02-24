@@ -74,11 +74,11 @@ class _ShimmerBox extends StatelessWidget {
 }
 
 /// 에러 위젯
-class ErrorWidget extends StatelessWidget {
+class AppErrorWidget extends StatelessWidget {
   final String message;
   final VoidCallback? onRetry;
 
-  const ErrorWidget({
+  const AppErrorWidget({
     super.key,
     required this.message,
     this.onRetry,

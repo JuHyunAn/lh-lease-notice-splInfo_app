@@ -124,7 +124,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                       itemCount: 5,
                       itemBuilder: (_, _) => const app_widgets.NoticeCardSkeleton(),
                     ),
-                    error: (error, _) => app_widgets.ErrorWidget(
+                    error: (error, _) => app_widgets.AppErrorWidget(
                       message: error.toString(),
                       onRetry: () => ref.invalidate(noticeListProvider),
                     ),

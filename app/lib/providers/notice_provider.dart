@@ -14,17 +14,23 @@ final noticeRepositoryProvider = Provider<NoticeRepository>((ref) {
   return NoticeRepository(client);
 });
 
-/// 지도용 공고 목록 상태
+/// 지도용 공고 목록 필터 상태
 class NoticeMapFilter {
   final String? region;
   final String? noticeType;
 
   const NoticeMapFilter({this.region, this.noticeType});
 
-  NoticeMapFilter copyWith({String? region, String? noticeType}) {
+  // sentinel: null을 '값 없음'과 '초기화'로 구분
+  static const _unset = Object();
+
+  NoticeMapFilter copyWith({
+    Object? region = _unset,
+    Object? noticeType = _unset,
+  }) {
     return NoticeMapFilter(
-      region: region ?? this.region,
-      noticeType: noticeType ?? this.noticeType,
+      region: identical(region, _unset) ? this.region : region as String?,
+      noticeType: identical(noticeType, _unset) ? this.noticeType : noticeType as String?,
     );
   }
 }
@@ -58,16 +64,19 @@ class NoticeListFilter {
     this.page = 0,
   });
 
+  // sentinel: null을 '값 없음'과 '초기화'로 구분
+  static const _unset = Object();
+
   NoticeListFilter copyWith({
-    String? keyword,
-    String? region,
-    String? noticeType,
+    Object? keyword = _unset,
+    Object? region = _unset,
+    Object? noticeType = _unset,
     int? page,
   }) {
     return NoticeListFilter(
-      keyword: keyword ?? this.keyword,
-      region: region ?? this.region,
-      noticeType: noticeType ?? this.noticeType,
+      keyword: identical(keyword, _unset) ? this.keyword : keyword as String?,
+      region: identical(region, _unset) ? this.region : region as String?,
+      noticeType: identical(noticeType, _unset) ? this.noticeType : noticeType as String?,
       page: page ?? this.page,
     );
   }

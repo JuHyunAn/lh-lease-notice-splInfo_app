@@ -58,7 +58,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   AppConstants.defaultLat,
                   AppConstants.defaultLng,
                 ),
-                currentLevel: AppConstants.defaultZoom.toInt(),
+                currentLevel: AppConstants.defaultZoom,
               );
             },
             loading: () => const Center(child: CircularProgressIndicator()),

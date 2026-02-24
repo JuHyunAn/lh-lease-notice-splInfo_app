@@ -16,7 +16,7 @@ class AppConstants {
   // 지도 기본 좌표 (서울 시청)
   static const double defaultLat = 37.5665;
   static const double defaultLng = 126.9780;
-  static const double defaultZoom = 10.0;
+  static const int defaultZoom = 10;
 
   // 마감임박 기준 (일)
   static const int urgentDays = 7;

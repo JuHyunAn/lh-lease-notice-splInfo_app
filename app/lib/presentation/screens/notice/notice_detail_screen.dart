@@ -53,7 +53,7 @@ class NoticeDetailScreen extends ConsumerWidget {
           return _DetailBody(details: details);
         },
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => app_widgets.ErrorWidget(
+        error: (error, _) => app_widgets.AppErrorWidget(
           message: error.toString(),
           onRetry: () => ref.invalidate(noticeDetailProvider(noticeId)),
         ),
