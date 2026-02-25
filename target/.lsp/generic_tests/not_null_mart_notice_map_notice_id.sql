@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="notice_id", model=get_where_subquery(ref('mart_notice_map'))) }}

@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: mart_notice_map
+    description: "앱 지도 마커용 - 공고당 1행 (Flutter app 직접 조회)"
+    columns:
+      - name: notice_id
+        description: "공고 ID"
+        tests:
+          - unique
+          - not_null
+      - name: notice_name
+        description: "공고명"
+      - name: notice_type
+        description: "공급유형 (주택/상가/토지)"
+      - name: region
+        description: "시도명"
+      - name: city
+        description: "시군구명"
+      - name: latitude
+        description: "위도 (지오코딩)"
+      - name: longitude
+        description: "경도 (지오코딩)"
+      - name: start_date
+        description: "공고일 (YYYY-MM-DD)"
+      - name: close_date
+        description: "마감일 (YYYY-MM-DD)"
+      - name: dtl_url
+        description: "공고 상세 URL"
+      - name: total_supply_count
+        description: "총 공급 건수"
+
+  - name: mart_notice_detail
+    description: "앱 상세 페이지용 - 공급건별 1행 (Flutter app 직접 조회)"
+    columns:
+      - name: notice_id
+        description: "공고 ID"
+        tests:
+          - not_null
+      - name: supply_type
+        description: "세부 공급유형"
+      - name: address
+        description: "공급 위치 주소"
+      - name: supply_count
+        description: "공급 세대수"
+      - name: supply_area
+        description: "공급 면적"
+      - name: min_price
+        description: "최소 분양가/임대가"

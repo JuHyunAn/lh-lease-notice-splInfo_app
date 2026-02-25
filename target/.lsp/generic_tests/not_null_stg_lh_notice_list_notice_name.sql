@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="notice_name", model=get_where_subquery(ref('stg_lh_notice_list'))) }}

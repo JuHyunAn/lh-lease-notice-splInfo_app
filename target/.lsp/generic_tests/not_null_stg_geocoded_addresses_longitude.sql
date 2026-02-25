@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="longitude", model=get_where_subquery(ref('stg_geocoded_addresses'))) }}

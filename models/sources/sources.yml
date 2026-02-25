@@ -1,0 +1,90 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    description: "LH 분양임대공고 ODS (원본 데이터)"
+    tables:
+      - name: ods_lh_lease_notice_info
+        description: "공고 목록 원본 (공공데이터포털 API)"
+        columns:
+          - name: PAN_ID
+            description: "공고 ID"
+          - name: PAN_NM
+            description: "공고명"
+          - name: PAN_SS
+            description: "공고 상태 (공고중/마감 등)"
+          - name: UPP_AIS_TP_NM
+            description: "상위 공급유형명 (주택/상가/토지)"
+          - name: AIS_TP_CD
+            description: "공급유형 코드"
+          - name: AIS_TP_CD_NM
+            description: "공급유형 코드명"
+          - name: SPL_INF_TP_CD
+            description: "공급정보 유형 코드"
+          - name: CNP_CD_NM
+            description: "시도명 (지역)"
+          - name: PAN_NT_ST_DT
+            description: "공고일 (YYYY.MM.DD 형식)"
+          - name: CLSG_DT
+            description: "마감일 (YYYY.MM.DD 형식)"
+          - name: DTL_URL
+            description: "공고 상세 URL"
+          - name: created_at
+            description: "적재 일시"
+
+      - name: ods_lh_lease_notice_spl_info
+        description: "공급 정보 원본 (공고별 공급 상세)"
+        columns:
+          - name: PAN_ID
+            description: "공고 ID"
+          - name: SPL_INF_TP_CD
+            description: "공급정보 유형 코드"
+          - name: data_type
+            description: "API 응답 목록 구분 (dsList01/02/03)"
+          - name: SGG_NM
+            description: "시군구명"
+          - name: LGDN_DTL_ADR
+            description: "토지 소재지 상세주소"
+          - name: DNG_HS_ADR
+            description: "동호 주소 (주택)"
+          - name: ADR
+            description: "일반 주소"
+          - name: SBD_LGO_ADR
+            description: "단지 주소"
+          - name: TOT_HSH_CNT
+            description: "총 세대수"
+          - name: SIL_HSH_CNT
+            description: "일반공급 세대수"
+          - name: SPL_AR
+            description: "공급면적"
+          - name: SPL_XPC_AMT
+            description: "공급예정금액 (토지)"
+          - name: SIL_AMT
+            description: "일반공급금액 (주택)"
+          - name: LS_GMY
+            description: "임대보증금"
+          - name: MM_RFE
+            description: "월임대료"
+          - name: AR
+            description: "면적 (토지)"
+          - name: HTY_NM
+            description: "주택유형명"
+          - name: SBD_LGO_NM
+            description: "단지명"
+
+      - name: ods_geocoded_addresses
+        description: "지오코딩 결과 (카카오 API)"
+        columns:
+          - name: address
+            description: "원본 주소 (검색 키)"
+          - name: latitude
+            description: "위도"
+          - name: longitude
+            description: "경도"
+          - name: geocoded_address
+            description: "지오코딩 결과 주소"
+          - name: is_success
+            description: "지오코딩 성공 여부"
+          - name: geocoded_at
+            description: "지오코딩 수행 일시"

@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_lh_notice_list
+    description: "공고 목록 정제 (공고당 1행, 날짜 형식 변환)"
+    columns:
+      - name: notice_id
+        description: "공고 ID (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: notice_name
+        description: "공고명"
+        tests:
+          - not_null
+      - name: notice_type
+        description: "공급유형 (주택/상가/토지)"
+      - name: region
+        description: "시도명"
+      - name: start_date
+        description: "공고일 (YYYY-MM-DD)"
+      - name: close_date
+        description: "마감일 (YYYY-MM-DD)"
+
+  - name: stg_lh_supply_info
+    description: "공급 정보 정제 (공급건별 1행)"
+    columns:
+      - name: notice_id
+        description: "공고 ID (FK → stg_lh_notice_list)"
+        tests:
+          - not_null
+      - name: address
+        description: "공급 위치 주소 (지오코딩 키)"
+      - name: city
+        description: "시군구명"
+
+  - name: stg_geocoded_addresses
+    description: "지오코딩 결과 (성공 건만)"
+    columns:
+      - name: address
+        description: "원본 주소 (PK)"
+        tests:
+          - unique
+          - not_null
+      - name: latitude
+        description: "위도"
+        tests:
+          - not_null
+      - name: longitude
+        description: "경도"
+        tests:
+          - not_null

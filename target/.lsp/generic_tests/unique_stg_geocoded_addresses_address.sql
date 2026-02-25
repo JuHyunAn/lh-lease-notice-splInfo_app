@@ -1,0 +1,1 @@
+{{ test_unique(column_name="address", model=get_where_subquery(ref('stg_geocoded_addresses'))) }}
