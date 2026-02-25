@@ -1,1 +1,0 @@
-{{ test_unique(column_name="notice_id", model=get_where_subquery(ref('mart_notice_map'))) }}
