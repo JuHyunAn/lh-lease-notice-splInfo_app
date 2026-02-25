@@ -11,3 +11,4 @@ if [[ "$feedback" != "ALLOW" ]]; then
   }'
 else
   jq -n '{action: "allow"}'
+fi
